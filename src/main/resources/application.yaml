@@ -1,0 +1,13 @@
+spring:
+  config:
+    import: vault://secret/details-service
+  cloud:
+    vault:
+      host: vault
+      port: 8200
+      scheme: http
+      token: root
+      kv:
+        enabled: true
+  application:
+    name: details-service
