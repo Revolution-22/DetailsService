@@ -4,7 +4,7 @@ import com.revolution.DetailsService.api.dto.AddressDto;
 import com.revolution.DetailsService.api.exception.AddressNotFoundException;
 import com.revolution.DetailsService.api.port.AddressRepository;
 import com.revolution.DetailsService.api.port.DetailsService;
-import com.revolution.DetailsService.api.request.AddressRequest;
+import com.revolution.DetailsService.api.request.UpdateAddressRequest;
 import com.revolution.DetailsService.api.response.AddressResponse;
 import lombok.RequiredArgsConstructor;
 
@@ -22,12 +22,12 @@ class CoreDetailsService implements DetailsService {
     }
 
     @Override
-    public AddressResponse updateAddress(AddressRequest addressRequest) {
-        long userId = addressRequest.userId();
+    public AddressResponse updateAddress(UpdateAddressRequest updateAddressRequest) {
+        long userId = updateAddressRequest.userId();
         if (!addressRepository.existsByUserId(userId)) {
             throw new AddressNotFoundException(userId);
         }
-        Address address = addressMapper.toModel(addressRequest);
+        Address address = addressMapper.toModel(updateAddressRequest);
         address.setUserId(userId);
         AddressDto updatedDto = addressRepository.save(addressMapper.toDto(address));
         return addressMapper.toResponse(addressMapper.toModel(updatedDto));

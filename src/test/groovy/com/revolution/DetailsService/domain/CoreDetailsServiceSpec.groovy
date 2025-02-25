@@ -2,7 +2,7 @@ package com.revolution.DetailsService.domain
 
 import com.revolution.DetailsService.api.exception.AddressNotFoundException
 import com.revolution.DetailsService.api.port.DetailsService
-import com.revolution.DetailsService.api.request.AddressRequest
+import com.revolution.DetailsService.api.request.UpdateAddressRequest
 import com.revolution.DetailsService.api.response.AddressResponse
 import com.revolution.DetailsService.domain.adapters.TestBeanConfiguration
 import spock.lang.Specification
@@ -36,8 +36,8 @@ class CoreDetailsServiceSpec extends Specification implements Constants {
             response.zipCode() == ZIP_CODE
     }
 
-    AddressRequest getUpdateRequest(long userId) {
-        return new AddressRequest(userId, COUNTRY, VOIVODESHIP, CITY, STREET, APARTMENT_NUMBER, HOUSE_NUMBER, ZIP_CODE)
+    UpdateAddressRequest getUpdateRequest(long userId) {
+        return new UpdateAddressRequest(userId, COUNTRY, VOIVODESHIP, CITY, STREET, APARTMENT_NUMBER, HOUSE_NUMBER, ZIP_CODE)
     }
 
     def "should not update address because is not created" () {

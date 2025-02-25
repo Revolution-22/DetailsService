@@ -1,7 +1,7 @@
 package com.revolution.DetailsService.domain;
 
 import com.revolution.DetailsService.api.dto.AddressDto;
-import com.revolution.DetailsService.api.request.AddressRequest;
+import com.revolution.DetailsService.api.request.UpdateAddressRequest;
 import com.revolution.DetailsService.api.response.AddressResponse;
 
 public class AddressMapper {
@@ -14,8 +14,8 @@ public class AddressMapper {
         return new AddressDto(address.getUserId(), address.getCountry(), address.getVoivodeship(), address.getCity(), address.getStreet(), address.getApartmentNumber(), address.getHouseNumber(), address.getZipCode());
     }
 
-    Address toModel(final AddressRequest addressRequest) {
-        return new Address(addressRequest.userId(), addressRequest.country(), addressRequest.voivodeship(), addressRequest.city(), addressRequest.street(), addressRequest.apartmentNumber(), addressRequest.houseNumber(), addressRequest.zipCode());
+    Address toModel(final UpdateAddressRequest updateAddressRequest) {
+        return new Address(updateAddressRequest.userId(), updateAddressRequest.country(), updateAddressRequest.voivodeship(), updateAddressRequest.city(), updateAddressRequest.street(), updateAddressRequest.apartmentNumber(), updateAddressRequest.houseNumber(), updateAddressRequest.zipCode());
     }
 
     AddressResponse toResponse(final Address address) {
