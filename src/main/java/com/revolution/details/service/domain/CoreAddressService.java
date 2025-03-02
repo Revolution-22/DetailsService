@@ -30,11 +30,7 @@ class CoreAddressService implements AddressService {
                                     addressMapper.ofRequest(updateAddressRequest,
                                             addressRepository.findByUserId(userId)
                                                .orElseThrow(() -> new AddressNotFoundException(userId)
-                                            ).userId()
-                                    )
-                            )
-                    )
-                );
+                                            ).userId()))));
     }
 
     @Override
