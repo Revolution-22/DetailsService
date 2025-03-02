@@ -1,6 +1,6 @@
-package com.revolution.DetailsService.api.port;
+package com.revolution.details.service.api.port;
 
-import com.revolution.DetailsService.api.dto.AddressDto;
+import com.revolution.details.service.api.dto.AddressDto;
 
 import java.util.Optional;
 

@@ -1,4 +1,4 @@
-package com.revolution.DetailsService.domain
+package com.revolution.details.service.domain
 
 trait Constants {
     static final String COUNTRY = "COUNTRY"

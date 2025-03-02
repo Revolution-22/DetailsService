@@ -1,4 +1,4 @@
-package com.revolution.DetailsService.api.dto;
+package com.revolution.details.service.api.dto;
 
 public record AddressDto(
         Long userId,

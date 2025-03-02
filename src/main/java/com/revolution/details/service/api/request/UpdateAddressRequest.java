@@ -1,6 +1,7 @@
-package com.revolution.DetailsService.api.response;
+package com.revolution.details.service.api.request;
 
-public record AddressResponse(
+public record UpdateAddressRequest(
+        Long userId,
         String country,
         String voivodeship,
         String city,

@@ -1,6 +1,5 @@
-package com.revolution.DetailsService.domain;
+package com.revolution.details.service.domain;
 
-import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.Setter;

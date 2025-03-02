@@ -1,4 +1,4 @@
-package com.revolution.DetailsService.api.exception;
+package com.revolution.details.service.api.exception;
 
 public class AddressNotFoundException extends RuntimeException {
 

@@ -1,8 +1,8 @@
-package com.revolution.DetailsService.domain.adapters
+package com.revolution.details.service.domain.adapters
 
-import com.revolution.DetailsService.api.port.AddressRepository
-import com.revolution.DetailsService.api.port.DetailsService
-import com.revolution.DetailsService.domain.DetailsBeanConfiguration
+import com.revolution.details.service.api.port.AddressRepository
+import com.revolution.details.service.api.port.AddressService
+import com.revolution.details.service.domain.DetailsBeanConfiguration
 
 class TestBeanConfiguration {
 
@@ -10,7 +10,7 @@ class TestBeanConfiguration {
 
     private final AddressRepository addressRepository = new TestAddressRepository()
 
-    DetailsService getDetailsService() {
+    AddressService getDetailsService() {
         detailsBeanConfiguration.getDetailsService(addressRepository)
     }
 

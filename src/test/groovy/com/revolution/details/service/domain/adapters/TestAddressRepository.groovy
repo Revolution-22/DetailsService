@@ -1,7 +1,7 @@
-package com.revolution.DetailsService.domain.adapters
+package com.revolution.details.service.domain.adapters
 
-import com.revolution.DetailsService.api.dto.AddressDto
-import com.revolution.DetailsService.api.port.AddressRepository
+import com.revolution.details.service.api.dto.AddressDto
+import com.revolution.details.service.api.port.AddressRepository
 
 class TestAddressRepository implements AddressRepository {
 

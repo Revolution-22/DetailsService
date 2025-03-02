@@ -1,19 +1,19 @@
-package com.revolution.DetailsService.domain
+package com.revolution.details.service.domain
 
-import com.revolution.DetailsService.api.exception.AddressNotFoundException
-import com.revolution.DetailsService.api.port.DetailsService
-import com.revolution.DetailsService.api.request.UpdateAddressRequest
-import com.revolution.DetailsService.api.response.AddressResponse
+import com.revolution.details.service.api.exception.AddressNotFoundException
+import com.revolution.details.service.api.port.AddressService
+import com.revolution.details.service.api.request.UpdateAddressRequest
+import com.revolution.details.service.api.response.AddressResponse
 import com.revolution.DetailsService.domain.adapters.TestBeanConfiguration
 import spock.lang.Specification
 import spock.lang.Subject
 
-class CoreDetailsServiceSpec extends Specification implements Constants {
+class CoreAddressServiceSpec extends Specification implements Constants {
 
     private TestBeanConfiguration configuration = new TestBeanConfiguration()
 
     @Subject
-    private DetailsService detailsService = configuration.getDetailsService()
+    private AddressService detailsService = configuration.getDetailsService()
 
     def setup(){
         configuration.clear()
