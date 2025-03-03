@@ -4,7 +4,7 @@ import com.revolution.details.service.api.exception.AddressNotFoundException
 import com.revolution.details.service.api.port.AddressService
 import com.revolution.details.service.api.request.UpdateAddressRequest
 import com.revolution.details.service.api.response.AddressResponse
-import com.revolution.DetailsService.domain.adapters.TestBeanConfiguration
+import com.revolution.details.service.domain.adapters.TestBeanConfiguration
 import spock.lang.Specification
 import spock.lang.Subject
 
