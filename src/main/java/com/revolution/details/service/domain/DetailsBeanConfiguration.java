@@ -5,7 +5,7 @@ import com.revolution.details.service.api.port.AddressService;
 
 public class DetailsBeanConfiguration {
 
-    public AddressService getDetailsService(AddressRepository addressRepository) {
+    public AddressService getAddressService(AddressRepository addressRepository) {
         return new CoreAddressService(addressRepository, new AddressMapper());
     }
 }
