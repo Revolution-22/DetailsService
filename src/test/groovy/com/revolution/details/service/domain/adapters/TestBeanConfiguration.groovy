@@ -11,7 +11,7 @@ class TestBeanConfiguration {
     private final AddressRepository addressRepository = new TestAddressRepository()
 
     AddressService getDetailsService() {
-        detailsBeanConfiguration.getDetailsService(addressRepository)
+        detailsBeanConfiguration.getAddressService(addressRepository)
     }
 
     def clear() {
