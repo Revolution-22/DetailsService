@@ -8,9 +8,17 @@ import org.springframework.kafka.config.ConcurrentKafkaListenerContainerFactory;
 import org.springframework.kafka.core.ConsumerFactory;
 import org.springframework.kafka.core.DefaultKafkaConsumerFactory;
 
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+
 @EnableKafka
 @Configuration
 public class KafkaConsumerConfig {
+
+    @Bean
+    public ExecutorService virtualThreadExecutor() {
+        return Executors.newVirtualThreadPerTaskExecutor();
+    }
 
     @Bean
     ConsumerFactory<String, Object> consumerFactory(KafkaProperties kafkaProperties) {
@@ -18,11 +26,15 @@ public class KafkaConsumerConfig {
     }
 
     @Bean
-    ConcurrentKafkaListenerContainerFactory<String, Object> kafkaListenerContainerFactory(KafkaProperties kafkaProperties) {
+    ConcurrentKafkaListenerContainerFactory<String, Object> kafkaListenerContainerFactory(ConsumerFactory<String, Object> consumerFactory, ExecutorService executorService) {
 
         ConcurrentKafkaListenerContainerFactory<String, Object> factory =
                 new ConcurrentKafkaListenerContainerFactory<>();
-        factory.setConsumerFactory(consumerFactory(kafkaProperties));
+        factory.setConsumerFactory(consumerFactory);
+
+        factory.setConcurrency(10);
+        factory.getContainerProperties().setPollTimeout(3000);
+
         return factory;
     }
 }
