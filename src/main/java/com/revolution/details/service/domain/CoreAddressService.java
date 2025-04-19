@@ -22,8 +22,7 @@ class CoreAddressService implements AddressService {
     }
 
     @Override
-    public AddressResponse updateAddress(UpdateAddressRequest updateAddressRequest) {
-        long userId = updateAddressRequest.userId();
+    public AddressResponse updateAddress(UpdateAddressRequest updateAddressRequest, final long userId) {
         return addressMapper.toResponse(
                     addressMapper.toModel(
                             addressRepository.save(

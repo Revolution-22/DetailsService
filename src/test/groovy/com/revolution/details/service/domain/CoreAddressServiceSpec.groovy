@@ -23,7 +23,7 @@ class CoreAddressServiceSpec extends Specification implements Constants {
         given: "Create address"
             detailsService.createAddress(1L)
         and: "Update address"
-            detailsService.updateAddress(getUpdateRequest(1L))
+            detailsService.updateAddress(getUpdateRequest(1L), 1L)
         when: "Try to get address"
             AddressResponse response = detailsService.getAddress(1L)
         then: "Check if update correctly"
@@ -37,12 +37,12 @@ class CoreAddressServiceSpec extends Specification implements Constants {
     }
 
     UpdateAddressRequest getUpdateRequest(long userId) {
-        return new UpdateAddressRequest(userId, COUNTRY, VOIVODESHIP, CITY, STREET, APARTMENT_NUMBER, HOUSE_NUMBER, ZIP_CODE)
+        return new UpdateAddressRequest(COUNTRY, VOIVODESHIP, CITY, STREET, APARTMENT_NUMBER, HOUSE_NUMBER, ZIP_CODE)
     }
 
     def "should not update address because is not created" () {
         when: "Try update address"
-            detailsService.updateAddress(getUpdateRequest(1L))
+            detailsService.updateAddress(getUpdateRequest(1L), 1L)
         then: "Check if thrown exception"
             thrown(AddressNotFoundException)
     }
