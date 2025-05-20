@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component;
 @Component
 class AddressMapper {
 
-    public AddressDto toDto(AddressEntity entity) {
+    AddressDto toDto(AddressEntity entity) {
         if (entity == null) {
             return null;
         }
@@ -22,7 +22,7 @@ class AddressMapper {
         );
     }
 
-    public AddressEntity toEntity(AddressDto dto) {
+    AddressEntity toEntity(AddressDto dto) {
         if (dto == null) {
             return null;
         }

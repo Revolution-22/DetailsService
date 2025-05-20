@@ -6,6 +6,6 @@ import com.revolution.details.service.api.response.AddressResponse;
 public interface AddressService {
 
     AddressResponse createAddress(long userId);
-    AddressResponse updateAddress(UpdateAddressRequest updateAddressRequest);
+    AddressResponse updateAddress(UpdateAddressRequest updateAddressRequest, final long userId);
     AddressResponse getAddress(long userId);
 }
